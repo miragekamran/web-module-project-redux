@@ -11,7 +11,7 @@ import MovieHeader from './MovieHeader';
 import AddMovieForm from './AddMovieForm';
 import FavoriteMovieList from './FavoriteMovieList';
 
-const App = props => {
+const App = (props) => {
   const displayFavorites = true;
 
   return (
@@ -48,4 +48,10 @@ const App = props => {
   );
 };
 
-export default App;
+const mapStateToProps = state => {
+  return {
+      displayFavorites: state.favoriteR.displayFavorites,
+  };
+}
+
+export default connect(mapStateToProps)(App);
